@@ -8,6 +8,9 @@ const nextConfig = {
       },
     ],
   },
+  // Explicitly disable export output to avoid static generation issues
+  // with dynamic routes that don't have generateStaticParams
+  output: undefined,
 };
 
 export default nextConfig;
