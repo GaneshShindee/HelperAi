@@ -3,6 +3,9 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Quiz from "../_components/quiz";
 
+// Configure this route to be dynamic to avoid static export issues
+export const dynamic = 'force-dynamic';
+
 export default function MockInterviewPage() {
   return (
     <div className="container mx-auto space-y-4 py-6">

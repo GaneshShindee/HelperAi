@@ -13,6 +13,9 @@ export const metadata = {
   description: "",
 };
 
+// Configure this route to be dynamic to avoid static export issues
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider

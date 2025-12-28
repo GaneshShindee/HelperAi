@@ -3,6 +3,9 @@ import DashboardView from "./_component/dashboard-view";
 import { getUserOnboardingStatus } from "@/actions/user";
 import { redirect } from "next/navigation";
 
+// Configure this route to be dynamic to avoid static export issues
+export const dynamic = 'force-dynamic';
+
 export default async function DashboardPage() {
   const { isOnboarded } = await getUserOnboardingStatus();
 

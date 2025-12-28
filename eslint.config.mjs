@@ -9,6 +9,21 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [...compat.extends("next/core-web-vitals")];
+// Explicitly define the ESLint configuration to avoid serialization issues
+const eslintConfig = [
+  ...compat.extends("next/core-web-vitals"),
+  {
+    languageOptions: {
+      // Explicitly set parser options to avoid function serialization
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+  },
+];
 
 export default eslintConfig;
